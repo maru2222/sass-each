@@ -1,0 +1,53 @@
+@import "layout";
+
+//===================== @each
+
+//クラス名（配列）
+$classNames: home, about, service, company, contact;
+
+//色とタイプの照合
+$colorTA: #EE7962; //  home
+$colorTB: #E94661; //  about
+$colorTC: #F5D962; //  service
+$colorTD: #2EA83A; //  company
+$colorTE: #7F98BA; //  contact
+
+//色のタイプリスト（配列）
+$color: $colorTA, $colorTB, $colorTC, $colorTD, $colorTE;
+
+//色　(暗い)のバリエーション
+$colorDarkPercent: 10%;
+$colorDark: 
+  darken($colorTA, $colorDarkPercent),
+  darken($colorTB, $colorDarkPercent),
+  darken($colorTC, $colorDarkPercent),
+  darken($colorTD, $colorDarkPercent),
+  darken($colorTE, $colorDarkPercent);
+
+//色　(明るい)のバリエーション
+$colorLightPercent: 8%;
+$colorLight: 
+  lighten($colorTA, $colorLightPercent),
+  lighten($colorTB, $colorLightPercent),
+  lighten($colorTC, $colorLightPercent),
+  lighten($colorTD, $colorLightPercent),
+  lighten($colorTE, $colorLightPercent);
+
+//@eachの処理
+nav{
+  ul{
+    li{
+      @each $classType in $classNames { //クラス名の配列をclassType の中に格納
+        $loop_key: index($classNames, $classType); //格納された分だけ処理
+        &.type_#{$classType}{
+          a{
+            background: nth($color, $loop_key);
+            &:hover{
+              background: nth($colorDark, $loop_key);
+            }
+          }
+        }
+      }
+    }
+  }
+}

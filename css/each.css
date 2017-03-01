@@ -1,0 +1,48 @@
+nav {
+  width: 25%;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+ul a, li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0 5px 1em;
+  box-sizing: border-box;
+}
+
+nav ul li.type_home a {
+  background: #EE7962;
+}
+nav ul li.type_home a:hover {
+  background: #e95234;
+}
+nav ul li.type_about a {
+  background: #E94661;
+}
+nav ul li.type_about a:hover {
+  background: #e11b3c;
+}
+nav ul li.type_service a {
+  background: #F5D962;
+}
+nav ul li.type_service a:hover {
+  background: #f2cd32;
+}
+nav ul li.type_company a {
+  background: #2EA83A;
+}
+nav ul li.type_company a:hover {
+  background: #23802c;
+}
+nav ul li.type_contact a {
+  background: #7F98BA;
+}
+nav ul li.type_contact a:hover {
+  background: #5e7da8;
+}
